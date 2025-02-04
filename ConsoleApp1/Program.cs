@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 
 namespace ConsoleApp1
@@ -17,16 +17,20 @@ namespace ConsoleApp1
             Task8();
             Task9();
             Task10();
-            Task11();
+            int? fromT11 = Task11();
+            if (fromT11 is not null)
+            {
+                Console.WriteLine(fromT11);
+            }
             Task12();
         }
-        public static void Task1()
+        static void Task1()
         {
             Console.WriteLine("Task1\n");
             Console.Write("Enter your name: ");
             string name = Console.ReadLine();
             Console.Write("Enter your age: ");
-            if (int.TryParse(Console.ReadLine(), out int age))
+            if (int.TryParse(Console.ReadLine(), out int age) && age is > 0 and < 150)
             {
                 Console.WriteLine($"Hello {name}\nYou are {age} years old.");
             }
@@ -36,7 +40,7 @@ namespace ConsoleApp1
             }
             Console.ReadLine();
         }
-        public static void Task2()
+        static void Task2()
         {
             Console.WriteLine("Task2\n");
             int numForT2 = 5;
@@ -46,7 +50,7 @@ namespace ConsoleApp1
             Console.WriteLine($"{numForT2}\n{DNumForT2}\n{symbForT2}\n{strForT2}");
             Console.ReadLine();
         }
-        public static void Task3()
+        static void Task3()
 
         {
             Console.WriteLine("Task3\n\nEnter number:");
@@ -60,7 +64,7 @@ namespace ConsoleApp1
                 Console.WriteLine("This is not a number.");
             }
         }
-        public static void Task4()
+        static void Task4()
         {
             Console.WriteLine("Task4\n\nEnter number:");
             if (float.TryParse(Console.ReadLine(), out float numForT4))
@@ -84,7 +88,7 @@ namespace ConsoleApp1
             }
             Console.ReadLine();
         }
-        public static void Task5()
+        static void Task5()
         {
             Console.WriteLine("Task5\n\nEnter number:");
             int numForT5;
@@ -139,7 +143,7 @@ namespace ConsoleApp1
             }
             Console.ReadLine();
         }
-        public static void Task6()
+        static void Task6()
         {
             Console.WriteLine("Task6\n");
             for (int i = 2; i < 101; i += 2)
@@ -148,7 +152,7 @@ namespace ConsoleApp1
             }
             Console.ReadLine();
         }
-        public static void Task7()
+        static void Task7()
         {
             Console.WriteLine("Task7\n");
             int sumForT7 = 0;
@@ -161,7 +165,7 @@ namespace ConsoleApp1
                 Console.WriteLine(sumForT7);
             Console.ReadLine();
         }
-        public static void Task8()
+        static void Task8()
         {
             Console.WriteLine("Task8\n");
             int[] arrForT8 = new int[10];
@@ -172,14 +176,14 @@ namespace ConsoleApp1
             }
             Console.ReadLine();
         }
-        public static void Task9()
+        static void Task9()
         {
             Console.WriteLine("Task9\n");
             int randIntT9 = Random.Shared.Next(1, 101);
             Console.WriteLine(randIntT9);
             Console.ReadLine();
         }
-        public static void Task10()
+        static void Task10()
         {
             Console.WriteLine("Task10\n");
             int[,] arr3x3 = new int[3, 3];
@@ -193,7 +197,7 @@ namespace ConsoleApp1
             }
             Console.ReadLine();
         }
-        public static int? Task11()
+        static int? Task11()
         {
             Console.WriteLine("Task11\n\nEnter the first number and then the second:");
             if (int.TryParse(Console.ReadLine(), out int fNumT11) && int.TryParse(Console.ReadLine(), out int sNumT11))
@@ -206,7 +210,7 @@ namespace ConsoleApp1
                 return null;
             }
         }
-        public static void Task12()
+        static void Task12()
         {
             Console.WriteLine("Task12\n");
             List<int> listT12 = new List<int>();
