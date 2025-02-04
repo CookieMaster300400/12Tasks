@@ -179,8 +179,7 @@ namespace ConsoleApp1
         static void Task9()
         {
             Console.WriteLine("Task9\n");
-            int randIntT9 = Random.Shared.Next(1, 101);
-            Console.WriteLine(randIntT9);
+            Console.WriteLine(Random.Shared.Next(1, 101));
             Console.ReadLine();
         }
         static void Task10()
